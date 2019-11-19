@@ -15,8 +15,8 @@ describe("Check if string is null", function () {
 
     })
     it("check if it separates using a coma", function () {
-        expect(calculate.Add("1,7")).toEqual(8);
-
+        expect(calculate.Add("1,7")).toEqual(8); 
+ 
     })
     it("check if it separates using other special characters", function () {
         expect(calculate.Add("1)(*&^%),7")).toEqual(8);
