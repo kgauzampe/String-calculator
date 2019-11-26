@@ -1,5 +1,5 @@
 
-module.exports = class StringCalculator {
+module.exports = class stringCalculator {
     constructor() {
         this.negativenum = (string) => {
             var number = "";
@@ -22,12 +22,7 @@ module.exports = class StringCalculator {
         }
 
         let checkNegative = this.negativenum(string);
-        try {
-            if (string.includes("-")) throw( "Negatives " + checkNegative + " not allowed");
-        }catch(error) { // checking for negatives
-            return error;
-            
-        }
+        if (string.includes("-")) throw new Error("Negatives " + checkNegative + " not allowed");
 
         for (let i = 0;i < numbers.length;i++) {
             var num = parseInt(numbers[i]); // convert string to int

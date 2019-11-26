@@ -1,7 +1,7 @@
-let stringCalc = require('../stringCalc');
-let calculate = new stringCalc;
+let stringCalculator = require('../src/stringCalculator');
+let calculate = new stringCalculator;
 
-console.log(calculate.Add("//-[**][%%]\n1**-2%%3000,-1"));
+
 
 describe("Check if string is null", function () {
     
@@ -25,6 +25,13 @@ describe("Check if string is null", function () {
     it("check if it only takes numbers", function () {
         expect(calculate.Add("1,\n2,7")).toEqual(10);
 
+    })
+
+    it("throw an error if there are negatives", function () {
+    expect(() => {
+        calculate.Add('1,-8,9')
+    }).toThrowError('Negatives -8, not allowed');
+ 
     })
   
 });
